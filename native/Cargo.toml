@@ -1,0 +1,18 @@
+[package]
+name = "cpal.node"
+version = "0.1.0"
+authors = ["slorenzo <SebastianLorenzo@gmail.com>"]
+license = "MIT"
+build = "build.rs"
+edition = "2018"
+exclude = ["artifacts.json", "index.node"]
+
+[lib]
+name = "cpal.node"
+crate-type = ["cdylib"]
+
+[build-dependencies]
+neon-build = "0.4.0"
+
+[dependencies]
+neon = "0.4.0"
