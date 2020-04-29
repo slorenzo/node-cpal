@@ -1,5 +1,5 @@
 [package]
-name = "cpal.node"
+name = "node-cpal"
 version = "0.1.0"
 authors = ["slorenzo <SebastianLorenzo@gmail.com>"]
 license = "MIT"
@@ -8,7 +8,7 @@ edition = "2018"
 exclude = ["artifacts.json", "index.node"]
 
 [lib]
-name = "cpal.node"
+name = "node_cpal"
 crate-type = ["cdylib"]
 
 [build-dependencies]

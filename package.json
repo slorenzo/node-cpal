@@ -1,11 +1,11 @@
 {
-	"name": "cpal.node",
+	"name": "node-cpal",
 	"version": "0.1.0",
-	"description": " CPAL (Rust Cross-platform audio I/O library) bindings for Node.js with Neon",
+	"description": "CPAL (Rust Cross-platform audio I/O library) bindings for Node.js with Neon",
 	"main": "lib/index.js",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/slorenzo/cpal.node"
+		"url": "https://github.com/slorenzo/node-cpal"
 	},
 	"author": "slorenzo <SebastianLorenzo@gmail.com>",
 	"license": "MIT",
