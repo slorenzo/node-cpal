@@ -1,18 +1,28 @@
 {
-  "name": "cpal.node",
-  "version": "0.1.0",
-  "description": " CPAL (Rust Cross-platform audio I/O library) bindings for Node.js with Neon",
-  "main": "lib/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/slorenzo/cpal.node"
-  },
-  "author": "slorenzo <SebastianLorenzo@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "neon-cli": "^0.4.0"
-  },
-  "scripts": {
-    "install": "neon build"
-  }
+	"name": "cpal.node",
+	"version": "0.1.0",
+	"description": " CPAL (Rust Cross-platform audio I/O library) bindings for Node.js with Neon",
+	"main": "lib/index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/slorenzo/cpal.node"
+	},
+	"author": "slorenzo <SebastianLorenzo@gmail.com>",
+	"license": "MIT",
+	"dependencies": {
+		"neon-cli": "^0.4.0"
+	},
+	"scripts": {
+		"install": "neon build",
+		"commit": "git-cz"
+	},
+	"devDependencies": {
+		"commitizen": "^4.0.4",
+		"cz-conventional-changelog": "^3.1.0"
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
+	}
 }
