@@ -1,6 +1,26 @@
 use neon::prelude::*;
 use cpal:: traits:: { DeviceTrait, HostTrait };
 
+pub fn available_hosts(mut cx: FunctionContext) -> JsResult<JsArray> {
+  let available_hosts = cpal::available_hosts();
+
+  let js_array: Handle<JsArray> = cx.empty_array();
+
+  for (host_index, host_id) in available_hosts.iter().enumerate() {
+    let obj: Handle<JsObject> = JsObject::new(&mut cx);
+
+    let index = cx.number(host_index as f64);
+    let name = cx.string(host_id.name());
+
+    obj.set(&mut cx, "id", index).unwrap();
+    obj.set(&mut cx, "name", name).unwrap();
+
+    let _ = js_array.set(&mut cx, host_index as u32, obj);
+  }
+
+  Ok(js_array)
+}
+
 pub fn default_input_device(mut cx: FunctionContext) -> JsResult<JsObject> {
   match cpal::default_host().default_input_device() {
     Some(device) => {
@@ -30,7 +50,6 @@ pub fn default_output_device(mut cx: FunctionContext) -> JsResult<JsObject> {
     None => cx.throw_error("No default output device"),
   }
 }
-
 
 pub fn input_devices(mut cx: FunctionContext) -> JsResult<JsArray> {
   let host = cpal:: default_host();
